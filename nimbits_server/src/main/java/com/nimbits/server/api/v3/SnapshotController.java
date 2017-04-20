@@ -75,7 +75,7 @@ public class SnapshotController extends RestAPI {
 
     }
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/{uuid}/snapshot", method = RequestMethod.GET)
+    @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE, RestAPI.HAL}, value = "/{uuid}/snapshot", method = RequestMethod.GET)
     public ResponseEntity<String> getSnapshot(HttpServletRequest request,
                                               @RequestHeader(name = AUTH_HEADER) String authorization,
                                               @RequestParam(name = "sd", required = false) Long sd,

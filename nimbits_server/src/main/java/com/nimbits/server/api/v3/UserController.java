@@ -80,7 +80,7 @@ public class UserController extends RestAPI {
     }
 
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/admin/user", method = RequestMethod.GET)
+    @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE, RestAPI.HAL}, value = "/admin/user", method = RequestMethod.GET)
     public ResponseEntity<String> getUser(@RequestHeader(name = AUTH_HEADER) String authorization,
                                           @RequestParam String email) throws IOException {
 
@@ -102,7 +102,7 @@ public class UserController extends RestAPI {
 
     }
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/admin/user", method = RequestMethod.DELETE)
+    @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE, RestAPI.HAL}, value = "/admin/user", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteUser(@RequestHeader(name = AUTH_HEADER) String authorization,
                                           @RequestParam String email) throws IOException {
 

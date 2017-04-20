@@ -30,6 +30,7 @@ import com.nimbits.server.transaction.user.service.UserService;
 import com.nimbits.server.transaction.value.service.ValueService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -54,6 +55,8 @@ public abstract class RestAPI {
     final EntityDao entityDao;
     final Gson gson;
     final ValueTask valueTask;
+
+    protected final static String HAL = "application/hal+json";
 
 
     public RestAPI(EntityService entityService, ValueService valueService, UserService userService,

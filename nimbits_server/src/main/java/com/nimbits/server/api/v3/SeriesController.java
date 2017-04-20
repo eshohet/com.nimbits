@@ -60,7 +60,7 @@ public class SeriesController extends RestAPI {
 
     }
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/{uuid}/series", method = RequestMethod.GET)
+    @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE, RestAPI.HAL}, value = "/{uuid}/series", method = RequestMethod.GET)
     public ResponseEntity<String> getSeries(@RequestHeader(name = AUTH_HEADER) String authorization,
                                             @PathVariable String uuid,
                                             @RequestParam(value = "start", required = false) String startParam,
@@ -118,7 +118,7 @@ public class SeriesController extends RestAPI {
 
     }
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/{uuid}/table", method = RequestMethod.GET)
+    @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE, RestAPI.HAL}, value = "/{uuid}/table", method = RequestMethod.GET)
     public ResponseEntity<String> getTable(@RequestHeader(name = AUTH_HEADER) String authorization,
                                            @PathVariable String uuid,
                                            @RequestParam(value = "start", required = false) String startParam,
