@@ -18,7 +18,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 export PATH=$JAVA_HOME/bin:$PATH
 
 
-apt-get install mysql-server -y
+#apt-get install mysql-server -y
 #echo "create database if not exists nimbits" | mysql -u root -p
 
 #if you want to install nimbits server on a device that may not have the ram to build from source, you can run these commands
